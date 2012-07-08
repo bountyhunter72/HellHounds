@@ -1,0 +1,8 @@
+name: HellHounds
+main: edu.cccc.cougarmail.jpatt907.HellHounds.HellHounds
+version: 1.0
+commands:
+    hounds:
+        description: Cast a spell
+        usage: /<command>
+        
