@@ -14,6 +14,8 @@ import edu.cccc.cougarmail.jpatt907.HellHounds.*;
 
 
 public class HellHounds extends JavaPlugin {
+	
+	//all of this is generic, you can reuse it and just change the names.
 	public static Logger log = Logger.getLogger("Minecraft");
 	Server _server = null;
 	JavaPlugin _parent = null;
@@ -40,12 +42,18 @@ public class HellHounds extends JavaPlugin {
 	}
     
     public void onEnable() {
+    	
+    	//This is stuff that Happens when the plugin Enables, if you wanted to have the plugin log a message when it enables you would put it here
     	log = this.getLogger();
         
+    	
+    	// you can put your onCommand stuff in this class, but if you want to put it somewhere else you make a command executer
+    	//and tell is what class will handle commands, like this
         	
     	CommandExecutor myExecutor = new HellHoundsCommand(this);
     	getCommand("hounds").setExecutor(myExecutor);
 
+    	//this makes the event listener actually listen
         getServer().getPluginManager().registerEvents(new  HellHoundsEventListener(null),this);
 
         
@@ -54,7 +62,7 @@ public class HellHounds extends JavaPlugin {
     
 
     public void onDisable() {
- 
+ //stuff that happens when server is shutting down
     }
 
 
